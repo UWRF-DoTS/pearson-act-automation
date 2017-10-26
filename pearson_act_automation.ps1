@@ -11,7 +11,7 @@
     Requires: Gpg4win, private key installed for ran user
 #>
 
-. "ACTFields.ps1";
+. "pearson_act_field_map.ps1";
 
 $ENCFILE_PATH = "C:\"; #Directory to place the encrypted Pearson ACT File
 $ENC_PASSPHRASE = "PASSPHRASE"; #Private key passphrase
