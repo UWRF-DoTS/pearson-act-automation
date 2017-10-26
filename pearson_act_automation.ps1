@@ -14,6 +14,7 @@
 . "ACTFields.ps1";
 
 $ENCFILE_PATH = "C:\"; #Directory to place the encrypted Pearson ACT File
+$ENC_PASSPHRASE = "PASSPHRASE"; #Private key passphrase
 $DECFILE_PATH = "C:\"; #Directory to place the decrypted Pearson ACT File
 $CSVFILE_PATH = "C:\";
 $PEARSON_UID = "USERID";
@@ -137,7 +138,7 @@ function decrypt($in){
 	$file = ([System.IO.Path]::GetFileNameWithoutExtension([System.IO.Path]::GetFileNameWithoutExtension($in)) + ".txt");
     $outfile = $DECFILE_PATH + "\" + [System.IO.Path]::GetFileNameWithoutExtension([System.IO.Path]::GetFileNameWithoutExtension($in)) + ".txt" ;    
     try{
-        gpg --output $file --keyring $env:APPDATA\gnupg\pubring.gpg --batch --yes  --passphrase ([System.Runtime.InteropServices.Marshal]::PtrToStringAuto([System.Runtime.InteropServices.Marshal]::SecureStringToBSTR((ConvertTo-SecureString (Get-Content AdmissionsGPG.ss))))) --decrypt ([System.IO.Path]::GetFileName($in));
+        gpg --output $file --keyring $env:APPDATA\gnupg\pubring.gpg --batch --yes  --passphrase $ENC_PASSPHRASE --decrypt ([System.IO.Path]::GetFileName($in));
 		Move-Item $file $outfile;
 		Remove-Item ([System.IO.Path]::GetFileName($in)) -Force;
         return $outfile;
