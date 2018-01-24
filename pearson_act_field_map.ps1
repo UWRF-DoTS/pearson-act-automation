@@ -2,7 +2,7 @@
 .SYNOPSIS
     Mappings of fixed space values to their positions and columns
 .NOTES
-    Full Name: ACTFields.ps1
+    Full Name: pearson_act_field_map.ps1
     Author: Shane O'Malley-Potting - shane.omalley-potting@uwrf.edu
     Values may need to be updated annually
 #>
@@ -390,5 +390,3 @@ $fixed_space_values = @(
     @{"column" = "Understanding Complex Test Score"; "start"= 819; "length" = 1},
     @{"column" = "Progress Toward Career Readiness Indicator"; "start"= 820; "length" = 1}
 );
-
-
