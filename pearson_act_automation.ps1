@@ -66,7 +66,7 @@ function run_scheduled($date){
         if($date.DayOfWeek -IN @(1,3,5)){ # Processed on M-W-F
             $scheduled = $true;
         } 
-        elseif ($date.DayOfWeek -EQ 6 -AND $date.Month % 2 -EQ 0 -AND $date.Day -GT 14 -AND $date.Day -LT 21){ # Processed every other month on the 3rd Saturday
+        elseif ($date.DayOfWeek -EQ 6 -AND $date.Month % 2 -EQ 0 -AND $date.Day -GT 14 -AND $date.Day -LE 21){ # Processed every other month on the 3rd Saturday
             $scheduled = $true;
         }
         elseif($date -IN $specials){ # Sometimes it is ran specially
