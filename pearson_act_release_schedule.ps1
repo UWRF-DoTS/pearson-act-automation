@@ -13,12 +13,10 @@ $schedule = @{
         Weekday Holidays: Day after Thanksgiving (Nov), MLK Day (Jan), Memorial Day (May). Labor Day is in a blackout period between August and September
 	Unlisted holiday for the lack of national test in August
     #>
-	"holidays" = @((Get-Date "10-20-2018"),(Get-Date "11-23-2018"),(Get-Date "12-24-2018"),(Get-Date "12-25-2018"),(Get-Date "01-01-2019"),(Get-Date "07-04-2019"), (Get-Date "01-21-2019"), (Get-Date "05-27-2019"), (Get-Date "08-17-2019"));    <#
-        National Test Day results in odd months
-    #>
-    "special_runs" = @((Get-Date "09-15-2018"),(Get-Date "07-20-2019"), (Get-Date "11-10-2018"));
-	"start_date" = "09/05/2018";
-	"start_code" = 81110
+    "holidays" = @((Get-Date "11-22-2019"),(Get-Date "12-24-2019"),(Get-Date "12-25-2019"),(Get-Date "07-04-2020"));   
+    "special_runs" = @(<#(Get-Date "09-15-2018"),(Get-Date "07-20-2019"), (Get-Date "11-10-2018")#>);
+    "start_date" = "09/04/2019";
+    "start_code" = 91110
 };
 
 function run_scheduled_test($date, $holidays, $specials){
